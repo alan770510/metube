@@ -1,0 +1,255 @@
+html,
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#page-container {
+    height: 100%;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+#master-head-container {
+    height: 56px;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    padding: 7px 16px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.nav-show-hide {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border: none;
+}
+
+.icon-guide {
+    font-size: 20px;
+    color: #606060;
+}
+
+a.logo-container {
+    height: 40px;
+    padding: 7px 15px;
+    box-sizing: border-box;
+}
+
+a.logo-container img {
+    height: 100%;
+}
+
+#side-nav-container {
+    width: 240px;
+    background-color: #f5f5f5;
+    position: fixed;
+    top: 56px;
+    left: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-section-container {
+    padding-top: 56px;
+
+}
+
+#main-section-container.paddingleft {
+
+    padding-left: 240px;
+
+}
+
+#main-content-container {
+
+    padding: 10px 30px;
+    display:flex;
+}
+
+.form-warpper {
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+
+    /* border: 1px solid #ccc; */
+    width: 50%;
+    min-height: 300px;
+     padding:20px;
+     box-shadow: rgb(0, 0, 0, 0.1) 0px 1px 2px;
+
+ }
+
+ #search-container {
+     flex: 1;
+     margin: 0px 40px;
+     display: flex;
+     justify-content: center;
+ }
+
+ #search-container form {
+     flex: 1;
+     display: flex;
+     justify-content: center;
+     height: 32px;
+ }
+
+ #search-container input {
+     flex: 1;
+     max-width: 600px;
+     padding: 2px 6px;
+     color: #111111;
+     font-size: 14px;
+     font-weight: 500;
+     border: 1px solid #cccccc;
+     border-top-left-radius: 2px;
+     border-bottom-left-radius: 2px;
+     border-right: none;
+     /* inset Changes the shadow from an outer shadow (outset) to an inner shadow */
+    box-shadow: #eeeeee 0px 1px 2px 0px inset;
+}
+
+#search-container form button {
+    width: 65px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.icon-search {
+    font-size: 12px;
+}
+
+.right-icons a {
+    text-decoration: none;
+    color: #606060;
+    padding-left: 15px;
+}
+
+.right-icons a .iconfont {
+
+    font-size: 20px;
+
+}
+
+/* sign up page*/
+/*To center our box we use the align-items property to align our item on the cross axis, which in this case is the block axis running vertically. We use justify-content to align the item on the main axis, which in this case the inline axis running horizontally.*/
+.sign-up-container{
+    background-color: #efefee;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.sign-up-container .column{
+    width:450px;
+    background-color: #ffffff;
+    max-height: 100%;
+    overflow-y:auto;
+    padding:20px 35px;
+}
+
+.sign-up-container .column .header img{
+    width:75px;
+}
+
+.sign-up-container .column .header h3{
+    font-size:24px;
+    font-weight:400;
+    margin:0px;
+    line-height: 32px;
+    padding-top:20px;
+}
+
+.sign-up-container .column .header h3 span{
+    font-size:14px;
+}
+
+.sign-up-form form{
+    padding-top:24px;
+    display:flex;
+    flex-direction:column;
+}
+
+.sign-up-form form input[type='text'],
+.sign-up-form form input[type='email'],
+.sign-up-form form input[type='password']{
+    border:none;
+    border-bottom: 1px solid #dedede;
+    margin: 10px 0;
+    font-size:14px;
+}
+.sign-up-form form input[type='submit'] {
+    background-color:#4285f4;
+    color:#ffffff;
+    boder:none;
+    border-radius: 3px;
+    height:36px;
+    margin-top:10px;
+    margin-bottom: 20px;
+    width:88px;
+}
+.sign-in-message{
+    font-size:14px;
+    font-weight:400;
+    color:#212529;
+}
+
+.error-msg{
+    color:#ff0000;
+    font-size:14px;
+    font-weight:400;
+}
+
+/* watch.php*/
+.watch-left-column{
+    flex:1;
+}
+
+.watch-left-column .video-player{
+    width:100%;
+}
+
+/*videoinfosection.php*/
+.video-info{
+    width: 100%;
+    padding: 20px 0 8px 0;
+}
+
+.video-info h1{
+    /*	The overflow is clipped, and the rest of the content will be invisible*/
+    overflow: hidden;
+    font-size: 18px;
+    font-weight:400;
+    line-height: 24px;
+}
+
+.bottom-section{
+    display:flex;
+
+}
+.view-count{
+    flex:1;
+    font-size:16px;
+    color:rgba(17,17,17,0.6)
+}
+.suggestions{
+    max-width:425px;
+    height:100%;
+    /*The flex-grow property specifies how much the item will grow relative to the rest of the flexible items inside the same container.*/
+    flex-grow:1;
+}
+
