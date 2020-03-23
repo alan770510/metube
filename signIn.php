@@ -14,7 +14,7 @@ if(isset($_POST['submit_button'])){
         header('Location:index.php');
     }
     else{
-        echo 'failed';
+        echo 'user login failed';
     }
 }
 function getInputValue($name){

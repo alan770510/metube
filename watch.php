@@ -7,6 +7,7 @@
             echo 'illegal id';
             die;
         }
+//        print_r($userLoggedInObj);
     $video = new Video($con, $_GET['id'],$userLoggedInObj);
 //    echo $video->getTitle()."--";
 //    echo $video->getViews();

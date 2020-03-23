@@ -1,0 +1,149 @@
+<?php
+require_once('./includes/head.php');
+require_once('./includes/classes/contactListProcessor.php');
+$contactList = new contactListProcessor($con,$usernameLoggedIn);
+echo "<div class = 'contactPage'>";
+echo "<div class = 'contactPage_head'> <h1>Contact List</h1><br><h3>"."Hello ".ucfirst($usernameLoggedIn).",</h3><br>";
+
+
+if (isset($_POST['Delete'])) {
+if(isset($_POST['contactList'])) {
+//    var_dump($_POST['contactList']);
+    $contactList->deleteContact($_POST['contactList']);
+    header("Location: contactList.php");
+}}
+elseif(isset($_POST['Block'])){
+if(isset($_POST['contactList'])) {
+    $contactList->blockContact($_POST['contactList'],1);
+    header("Location: contactList.php");
+}}
+elseif(isset($_POST['unBlock'])){
+    if(isset($_POST['contactList'])) {
+        $contactList->blockContact($_POST['contactList'],0);
+        header("Location: contactList.php");
+    }}
+
+
+
+
+if(isset($_POST['contactName'])) {
+//    print_r($_POST['contactName']);
+    $block = 0;
+    if(isset($_POST['toBlock'])){
+        $block = 1;
+    }
+    $message = $contactList->addContact($_POST['contactName'],$_POST['groupName'],$block);
+
+    if(empty($message)){
+    header("Location: contactList.php");
+    }
+    echo "<p id='contactListError'>Error! ".$message.'</p>';
+}
+
+?>
+
+<!--增加新聯絡人-->
+<button id="showaddcontact" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Contact</button>
+<br>
+<div class="modal" id="myModal"  tabindex="-1" role="dialog">
+    <div class="modal-dialog"  role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Contact</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="contact_form" action="contactList.php" method="POST">
+                Username:  <input type="text" name="contactName"> <br>
+                Groupname: <select name="groupName">
+                        <option value="family">family</option>
+                        <option value="friends">friends</option>
+                        <option value="favorite">favorite</option>
+                         </select>
+                Blocked: <input type="checkbox"  name="toBlock" value="1" >
+            </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="submitForm" class="btn btn-primary" >Add</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    $("#submitForm").on('click', function() {
+        $("#contact_form").submit();
+    });
+</script>
+<!--增加新聯絡人-->
+
+<?php
+$queryResult = $contactList->query();
+if(empty($queryResult)){
+    echo "<h5>".'Your contact list is empty'."</h5>";
+    die;
+}
+?>
+</div>
+
+<div class = 'contactList'>
+    <div class="filter">
+        <h5>Your contact list is below:</h5>
+    <form action="contactList.php" method="post">
+        <div class="btn-group" >
+    <select name="groupfilter">
+        <option value="none" selected disabled hidden>
+            Select an Option
+        </option>
+        <?php echo $contactList->getviewfilter()?>
+    </select>
+        </div>
+        <input type="submit"  class="btn btn-outline-info" name ="viewFilter" value ="Filter">
+    </div>
+    <div class="viewtable">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Selected</th>
+            <th scope="col">Username</th>
+            <th scope="col">Groupname</th>
+            <th scope="col">Blocked</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+
+        if(isset($_POST['viewFilter'])){
+            if(isset($_POST['groupfilter'])) {
+                echo $contactList->viewFilter($_POST['groupfilter']);}
+            else{
+                     echo $contactList->fetchData();
+            }
+            }
+        else{
+            echo $contactList->fetchData();
+        }
+        ?>
+        </tbody>
+    </table>
+        <input type="submit" class="btn btn-outline-danger" name = "Delete" value ="Delete">
+       <input type="submit" class="btn btn-outline-warning" name ="Block" value ="Block">
+       <input type="submit" class="btn btn-outline-success" name ="unBlock" value ="Unblock">
+       <input type="reset" class="btn btn-outline-dark">
+    </div>
+    </form>
+</div><!--contactList 的div-->
+</div> <!--contactPage 的div-->
+
+
+</div>
+</div>
+</div>
+</body>
+</html>
