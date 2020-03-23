@@ -3,7 +3,7 @@ require_once('./includes/head.php');
 require_once('./includes/classes/contactListProcessor.php');
 $contactList = new contactListProcessor($con,$usernameLoggedIn);
 echo "<div class = 'contactPage'>";
-echo "<div class = 'contactPage_head'> <h1>Contact List</h1><br><h3>"."Hello ".ucfirst($usernameLoggedIn).",</h3><br>";
+echo "<div class = 'contactPage_head'> <h1><a href=\"contactList.php\">Contact List</a></h1><br><h3>"."Hello ".ucfirst($usernameLoggedIn).",</h3><br>";
 
 
 if (isset($_POST['Delete'])) {

@@ -277,10 +277,15 @@ a.logo-container img {
 
 }
 .contactPage_head h1{
+
     background-color: #fcf8e3;
     border:1px solid #dedede ;
     border-radius: 3px;
     text-align:center;
+}
+.contactPage_head h1 a{
+    text-decoration:none;
+    color: black;
 }
 
 .contactPage_head #contactListError{

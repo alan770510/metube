@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2951e1b-e328-4f56-877a-143b89598f72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contactList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/classes/contactListProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/clemsonconfig.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/signIn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watch.php" beforeDir="false" afterPath="$PROJECT_DIR$/watch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/common-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/common-action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactList.php" beforeDir="false" afterPath="$PROJECT_DIR$/contactList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/head.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
   <component name="ProjectId" id="1Z0ShCEpUffoP9wkIgSHqWjmaNn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -48,9 +50,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/includes" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\metube\includes" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\metube" />
     </key>
@@ -88,7 +93,8 @@
       <workItem from="1584646620966" duration="839000" />
       <workItem from="1584823084102" duration="8169000" />
       <workItem from="1584888813348" duration="36746000" />
-      <workItem from="1584975145581" duration="5564000" />
+      <workItem from="1584975145581" duration="7463000" />
+      <workItem from="1584993465081" duration="868000" />
     </task>
     <servers />
   </component>
