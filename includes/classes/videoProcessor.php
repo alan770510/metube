@@ -9,12 +9,20 @@ class videoProcessor{
     public function __construct($con)
     {
         $this->con =$con;
-        //realpath 抓取絕對路徑
+
+    /*   不知道為啥which 在linux上無法跑 只好直接指定
+       $this->ffmpegPath = exec("which ffmpeg");
+        $this->ffprobePath = exec("which ffprobe");
+    */
+//       $this->ffmpegPath = "/usr/bin/ffmpeg";
+//        $this->ffprobePath = "/usr/bin/ffprobe";
+                   //realpath 抓取絕對路徑
         $this->ffmpegPath = realpath("ffmpeg/bin/ffmpeg.exe");
         $this->ffprobePath = realpath("ffmpeg/bin/ffprobe.exe");
     }
     public function uploadVideo($videoUploadData)
     {
+
         $targetDir = 'uploads/videos/';
         $videoData = $videoUploadData->videoDataArray;
 //        The basename() function returns the filename from a path.
@@ -100,7 +108,7 @@ class videoProcessor{
         //視頻格式轉換成MP4
         private function convertVideoToMp4($tempFilePath,$finalFilePath){
 //      File descriptor 2 is the standard error,  & indicates that what follows is a file descriptor and not a file name
-//            windows執行要用絕對路徑
+//            windows執行要用絕對路徑  linux 直接用/sbin/ffmpeg instead of $this->
             $cmd ="$this->ffmpegPath -i $tempFilePath $finalFilePath 2>&1";
             $outputLog = array();
 //            https://www.php.net/manual/en/function.exec.php

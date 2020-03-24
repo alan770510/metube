@@ -12,8 +12,10 @@ class VideoDetailsFormProvider {
          $categoriesInput = $this->createCategroiesInput();
          $uploadButton = $this->createUploadButton();
          //https://www.w3schools.com/tags/att_form_enctype.asp
+         $processingPath = "../../processing.php";
+//         $processingPath = "processing.php";
          return "
-        <form action='../../processing.php' method='POST' enctype='multipart/form-data'>
+        <form action='$processingPath' method='POST' enctype='multipart/form-data'>
             $fileInput
             $titleInput
             $descriptionInput 

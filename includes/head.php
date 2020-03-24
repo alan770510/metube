@@ -50,7 +50,7 @@ $userLoggedInObj = new User($con,$usernameLoggedIn);
        </div>
        <div class="right-icons">
            <a href="/upload.php"><i class="iconfont icon-upload"></i></a>
-           <a href="/user_center.php"><i class="iconfont icon-user"></i></a>
+           <a href="/signIn.php"><i class="iconfont icon-user"></i></a>
        </div>
     </div>
     <div id ="side-nav-container" style="display:none;">

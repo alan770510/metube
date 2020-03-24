@@ -74,6 +74,7 @@ a.logo-container img {
 
     padding: 10px 30px;
     display:flex;
+    /*justify-content: center;*/
 }
 
 .form-warpper {
@@ -261,7 +262,7 @@ a.logo-container img {
     width: 100vh;
     display:flex;
     flex-direction: column;
-    /*justify-content: center;*/
+    justify-content: center;
     align-items:center;
 
 
