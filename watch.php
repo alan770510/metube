@@ -4,7 +4,7 @@
     require_once('./includes/classes/VideoinfoSection.php');
 
         if(!isset($_GET['id'])){
-            echo 'illegal id';
+            echo 'illegal Video id';
             die;
         }
 //        print_r($userLoggedInObj);

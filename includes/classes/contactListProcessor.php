@@ -85,11 +85,11 @@ class contactListProcessor
         $query->execute($blockList);
     }
     public function getviewfilter(){
-        $query = $this->con->prepare("SELECT groupname From contactlist WHERE mainuser =:mainUser");
+        $query = $this->con->prepare("SELECT distinct groupname From contactlist WHERE mainuser =:mainUser");
         $query->bindParam(':mainUser',$this->usernameLoggedIn);
         $query->execute();
         $this->viewquery = $query->fetchAll(PDO::FETCH_ASSOC);
-        print_r($this->viewquery);
+//        print_r($this->viewquery);
         foreach ($this->viewquery as $key => $value) {
             $this->view .= '<option value="' .$value[groupname].'">'.$value[groupname].'</option>';
         }
@@ -110,7 +110,7 @@ class contactListProcessor
                 $block = 'V';
             }
 
-            $this->filtertable .= '<tr> <th scope="row">'.$count.'</th>>';
+            $this->filtertable .= '<tr> <th scope="row">'.$count.'</th>';
             $this->filtertable .= '<td>' . '<input type="checkbox" name="contactList[]" value = "'.$value['username'] . '"> </td>' ;
             $this->filtertable .= '<td>' . $value['username'] . '</td>' . '<td>' . $value['groupname'] . '</td>'. '<td>' . $block . '</td>';
             $this->filtertable .= '</tr>';

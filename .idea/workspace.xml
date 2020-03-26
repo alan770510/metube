@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2951e1b-e328-4f56-877a-143b89598f72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/classes/showAllVideo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/VideoDetailsFormProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/VideoDetailsFormProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/videoProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/videoProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactList.php" beforeDir="false" afterPath="$PROJECT_DIR$/contactList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/contactListProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/contactListProcessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/signIn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/signUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watch.php" beforeDir="false" afterPath="$PROJECT_DIR$/watch.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,9 @@
       <workItem from="1584996003868" duration="241000" />
       <workItem from="1584997436018" duration="205000" />
       <workItem from="1584997759436" duration="421000" />
-      <workItem from="1584999750032" duration="7777000" />
+      <workItem from="1584999750032" duration="7950000" />
+      <workItem from="1585083970004" duration="2504000" />
+      <workItem from="1585161070797" duration="17659000" />
     </task>
     <servers />
   </component>
@@ -128,10 +131,11 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="720" y="144" key="#PHP/-1920.21.1536.824/2560.-463.1080.1880/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1583974727696" />
-    <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584558928730">
-      <screen x="2560" y="-463" width="864" height="1496" />
+    <state x="2732" y="129" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585163963118">
+      <screen x="2560" y="0" width="864" height="1496" />
     </state>
     <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584558928730" />
+    <state x="2732" y="129" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.0.864.1496/0.0.2048.1112/-1920.348.1536.824@2560.0.864.1496" timestamp="1585163963118" />
     <state width="821" height="432" key="GridCell.Tab.0.bottom" timestamp="1584565254868">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
@@ -148,10 +152,11 @@
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
     <state width="821" height="432" key="GridCell.Tab.0.right/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584565254868" />
-    <state x="2792" y="98" key="NewPhpClassDialog" timestamp="1584824905747">
-      <screen x="2560" y="-463" width="864" height="1496" />
+    <state x="2792" y="561" key="NewPhpClassDialog" timestamp="1585163740194">
+      <screen x="2560" y="0" width="864" height="1496" />
     </state>
     <state x="2792" y="98" key="NewPhpClassDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584824905747" />
+    <state x="2792" y="561" key="NewPhpClassDialog/2560.0.864.1496/0.0.2048.1112/-1920.348.1536.824@2560.0.864.1496" timestamp="1585163740194" />
     <state x="2826" y="208" key="NewPhpFileDialog" timestamp="1584823137327">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>

@@ -1,6 +1,10 @@
 <?php
 require_once('./includes/head.php');
 require_once('./includes/classes/contactListProcessor.php');
+if(empty($usernameLoggedIn)){
+    echo "<script>alert('You are not login, redirect to Login page after click'); location.href = 'signIn.php';</script>";
+//    header("refresh:3;url=signIn.php");
+}
 $contactList = new contactListProcessor($con,$usernameLoggedIn);
 echo "<div class = 'contactPage'>";
 echo "<div class = 'contactPage_head'> <h1><a href=\"contactList.php\">Contact List</a></h1><br><h3>"."Hello ".ucfirst($usernameLoggedIn).",</h3><br>";
@@ -56,14 +60,20 @@ if(isset($_POST['contactName'])) {
             </div>
 
             <div class="modal-body">
-                <form id="contact_form" action="contactList.php" method="POST">
-                Username:  <input type="text" name="contactName"> <br>
-                Groupname: <select name="groupName">
+                <form id="contact_form" action="contactList.php" enctype="multipart/form-data" method="POST">
+				<div class="form-group">											  
+                <label for="contactName">Username:</label>  <input type="text" id="contactName" name="contactName" required>
+                </div>
+				<div class="form-group">
+                <label for="groupName">Groupname:&nbsp</label>
+                        <select id="groupName" name="groupName">
                         <option value="family">family</option>
                         <option value="friends">friends</option>
                         <option value="favorite">favorite</option>
-                         </select>
-                Blocked: <input type="checkbox"  name="toBlock" value="1" >
+                        </select>
+<!--                    &nbsp html空格-->
+                <label for="Blocked">Blocked:&nbsp&nbsp&nbsp</label><input type="checkbox" id="Blocked" name="toBlock" value="1" >
+                </div>
             </form>
 
             </div>
