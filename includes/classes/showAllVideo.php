@@ -3,7 +3,8 @@
 
 class showAllVideo
 {
-    private $con,$video,$userLoggedInObj,$allVideoPath,$categoryList,$categorydb;
+    private $con,$video,$categoryList,$categorydb;
+    private $allVideoPath =array();
     public function __construct($con)
     {
         $this->con = $con;
@@ -17,18 +18,18 @@ class showAllVideo
             $filePath = $value["File_path"];
             $title = $value["title"];
             $uploaded_by = $value["uploaded_by"];
-            $views =$value["views"];
-            $upload_date = date('Y-m-d H:i:s',$value["upload_date"]);
+            $views = $value["views"];
+            $upload_date = date('Y-m-d H:i:s', $value["upload_date"]);
             $videoid = $value["id"];
             $thumbnailpath = $this->getthumbnail($videoid);
             $thumbnailpath = $thumbnailpath["file_path"];
             $videolink = "<a href='watch.php?id=$videoid'><img src='$thumbnailpath' alt='$title' height='200' width='300'></a>";
 
 
-            $this->allVideoPath .= "<div>$videolink
-                    <source src='$filePath' type='video/MP4'> </source></video><br>
+            array_push($this->allVideoPath, "<div>$videolink
+                    <br>
                     <span id='videoTitle'>$title</span><br>$uploaded_by<br>$views views &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $upload_date
-                    </div> &emsp;&emsp;&emsp;";
+                    </div> &emsp;&emsp;&emsp;");
         }
         return $this->allVideoPath;
     }
@@ -65,7 +66,7 @@ class showAllVideo
 
 
             $this->allVideoPath .= "<div>$videolink
-                    <source src='$filePath' type='video/MP4'> </source></video><br>
+                    <br>
                     <span id='videoTitle'>$title</span><br>$uploaded_by<br>$views views &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $upload_date
                     </div> &emsp;&emsp;&emsp;";
         }
