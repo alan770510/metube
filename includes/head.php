@@ -38,7 +38,7 @@ $userLoggedInObj = new User($con,$usernameLoggedIn);
     </script>
 <!--分頁外掛 pagination-->
 
-    <script src="../jquery.twbsPagination.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery.twbsPagination.js" type="text/javascript"></script>
 
 
     <!-- my css -->

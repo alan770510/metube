@@ -3,7 +3,7 @@
 
 class showAllVideo
 {
-    private $con,$video,$categoryList,$categorydb;
+    private $con,$video,$categoryList,$categorydb,$categoryFilter,$thumbnail,$categoryFilterquery;
     private $allVideoPath =array();
     public function __construct($con)
     {
@@ -38,7 +38,7 @@ class showAllVideo
         $query = $this->con->prepare("SELECT file_path From thumbnail where video_id =:video_id and selected=1");
         $query->bindParam(':video_id',$videoid);
         $query->execute();
-        return $this->video = $query->fetch(PDO::FETCH_ASSOC);
+        return $this->thumbnail = $query->fetch(PDO::FETCH_ASSOC);
 
     }
 
@@ -51,9 +51,9 @@ class showAllVideo
         $query = $this->con->prepare("SELECT videos.* From videos inner join categories on videos.category = categories.id where categories.name=:category");
         $query->bindParam(':category',$category);
         $query->execute();
-        $this->video = $query->fetchAll(PDO::FETCH_ASSOC);
+        $this->categoryFilterquery = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($this->video as $key => $value) {
+        foreach ($this->categoryFilterquery as $key => $value) {
             $filePath = $value["File_path"];
             $title = $value["title"];
             $uploaded_by = $value["uploaded_by"];
@@ -65,16 +65,16 @@ class showAllVideo
             $videolink = "<a href='watch.php?id=$videoid'><img src='$thumbnailpath' alt='$title' height='200' width='300'></a>";
 
 
-            $this->allVideoPath .= "<div>$videolink
+            $this->categoryFilter .= "<div>$videolink
                     <br>
                     <span id='videoTitle'>$title</span><br>$uploaded_by<br>$views views &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $upload_date
                     </div> &emsp;&emsp;&emsp;";
         }
-        return $this->allVideoPath;
+        return $this->categoryFilter;
     }
     public function getCategoryList()
     {
-        $query = $this->con->prepare("SELECT categories.* From videos inner join categories on videos.category = categories.id");
+        $query = $this->con->prepare("SELECT distinct categories.* From videos inner join categories on videos.category = categories.id");
         $query->execute();
         $this->categorydb = $query->fetchAll(PDO::FETCH_ASSOC);
         foreach ($this->categorydb as $key => $value) {

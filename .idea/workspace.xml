@@ -2,16 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2951e1b-e328-4f56-877a-143b89598f72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/channel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/channelprocess.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/classes/channelProcessor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/showallvideoprocess.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel.php" beforeDir="false" afterPath="$PROJECT_DIR$/channel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channelprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/channelprocess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/channelProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/channelProcessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/classes/showAllVideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/showAllVideo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/videoProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/videoProcessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery.twbsPagination.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/22-5e7b9979ba6de.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/22-5e7b9979f02e0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/22-5e7b997a36bde.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/23-5e7bfa8339414.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/23-5e7bfa835aa14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/23-5e7bfa8382cf4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/24-5e7bfaa5ab37d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/24-5e7bfaa5cad28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/24-5e7bfaa5f3caf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/25-5e7bfb08e5091.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/25-5e7bfb091580b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/25-5e7bfb093e948.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/26-5e7bfb8ce9a6a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/26-5e7bfb8d161a5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/26-5e7bfb8d3ecb5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/27-5e7bfba00008c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/27-5e7bfba028ee7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/27-5e7bfba053173.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/28-5e7d4f6657db5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/28-5e7d4f6678e7e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/28-5e7d4f66a1555.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/29-5e7d4fb2e17dc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/29-5e7d4fb30ccba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/29-5e7d4fb336764.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +82,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/includes" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\metube" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\metube\includes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\metube" />
     </key>
   </component>
   <component name="RunManager">
@@ -107,7 +132,11 @@
       <workItem from="1585161070797" duration="18372000" />
       <workItem from="1585225215351" duration="1497000" />
       <workItem from="1585267109145" duration="9189000" />
-      <workItem from="1585332276382" duration="20245000" />
+      <workItem from="1585332276382" duration="21699000" />
+      <workItem from="1585412476770" duration="27020000" />
+      <workItem from="1585454233697" duration="599000" />
+      <workItem from="1585457604242" duration="1005000" />
+      <workItem from="1585493938630" duration="12835000" />
     </task>
     <servers />
   </component>
@@ -136,6 +165,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="720" y="144" key="#PHP/-1920.21.1536.824/2560.-463.1080.1880/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1583974727696" />
+    <state x="2673" y="20" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585454194756">
+      <screen x="2560" y="-463" width="864" height="1496" />
+    </state>
+    <state x="2673" y="20" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585454194756" />
     <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585269864339">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
@@ -178,9 +211,10 @@
     </state>
     <state x="681" y="259" key="run.anything.popup/-1920.21.1536.824/2560.-463.1080.1880/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1583974781607" />
     <state x="2847" y="-115" key="run.anything.popup/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584383781501" />
-    <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup" timestamp="1584368442233">
+    <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup" timestamp="1585453596063">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
     <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584368442233" />
+    <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585453596063" />
   </component>
 </project>

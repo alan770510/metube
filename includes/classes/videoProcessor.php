@@ -27,7 +27,7 @@ class videoProcessor{
         $videoData = $videoUploadData->videoDataArray;
 //        The basename() function returns the filename from a path.
         $tempFilePath = $targetDir . uniqid() . basename($videoData['name']);
-//        $tempFilePath = str_replace(" ","_",$tempFilePath);
+//       拿掉空白 $tempFilePath = str_replace(" ","_",$tempFilePath);
         $tempFilePath = preg_replace('/\s+/', '_', $tempFilePath);
         $isValidData = $this -> processData($videoData, $tempFilePath);
 
