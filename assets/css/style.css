@@ -394,6 +394,7 @@ a.logo-container img {
 .container .tab-content>.active #page-nav{
 text-align:center;
 }
+/*my subsciptions tab*/
 #showSubscriptions .video{
     display:flex;
     flex-direction: row;
@@ -403,7 +404,18 @@ text-align:center;
     width:200px;
     height:200px;
 }
+/*my playlist tab*/
+.container .tab-content>.active #showMyPlayList{
+    display:flex;
+    flex-flow: row wrap;
 
+}
+.container .tab-content>.active #showMyPlayList div{
+    margin: 10px;
 
+}
+.container .tab-content>.active #showMyPlayList p {
+    flex-basis: 100%;
 
+}
 /*channel.php*/

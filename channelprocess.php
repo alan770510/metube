@@ -31,10 +31,26 @@ if(isset($_POST['mysubscribe'])){
 
 if (isset($_POST['Delete'])) {
     if(isset($_POST['videoList'])) {
-//    var_dump($_POST['contactList']);
+    var_dump($_POST['videoList']);
         $channel = new channelProcessor($con,$_GET['channel'],$usernameLoggedIn);
         $channel->deleteVideo($_POST['videoList']);
         $reroute = 'channel.php?channel='.$_GET['channel'];
     header("Location:$reroute");
     }}
+
+if(isset($_POST['PlayList'])){
+    $channel = new channelProcessor($con,$_GET['channel'],$usernameLoggedIn);
+    $message = $channel->createPlayList($_POST['PlayList']);
+    $reroute = 'channel.php?channel='.$_GET['channel'].'&tab=myPlayList';
+   echo "<script>alert('$message'); location.href = '$reroute';</script>";
+
+//    header("Location:$reroute");
+}
+
+
+if(isset($_POST['myplaylist'])){
+    $channel = new channelProcessor($con,$_POST['user'],$usernameLoggedIn);
+    echo json_encode($channel->showPlayList());
+
+}
 ?>
