@@ -2,9 +2,9 @@
 //require_once('./includes/clemsonconfig.php');
 
 require_once('./includes/config.php');
-require_once('./includes/classes/FormSanitizer.php');
-require_once('./includes/classes/Account.php');
-require_once('./includes/classes/Constants.php');
+require_once('./includes/class/FormSanitizer.php');
+require_once('./includes/class/Account.php');
+require_once('./includes/class/Constants.php');
 $account = new Account($con);
     if(isset($_POST['submit_button'])){
 //        因為宣告static 只需要用:  不需要宣告新物件
@@ -12,11 +12,11 @@ $account = new Account($con);
         $lastName = FormSanitizer::sanitizeFormString($_POST['last_name']);
         $username = FormSanitizer::sanitizeUsername($_POST['Username']);
         $email = FormSanitizer::sanitizeFormEmail($_POST['Email']);
-        $confirmEmail = FormSanitizer::sanitizeFormEmail($_POST['confirm_Email']);
+        $connfirmEmail = FormSanitizer::sanitizeFormEmail($_POST['confirm_Email']);
         $password = FormSanitizer::sanitizePassword($_POST['password']);
-        $confirmPassword = FormSanitizer::sanitizePassword($_POST['confirm_password']);
+        $connfirmPassword = FormSanitizer::sanitizePassword($_POST['confirm_password']);
         //註冊用戶
-        $wasSuccessful = $account->register($firstName,$lastName,$username,$email,$confirmEmail,$password,$confirmPassword);
+        $wasSuccessful = $account->register($firstName,$lastName,$username,$email,$connfirmEmail,$password,$connfirmPassword);
         if($wasSuccessful){
             //註冊成功後跳到主頁
             $_SESSION['userLoggedIn'] = $username;

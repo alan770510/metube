@@ -4,18 +4,39 @@
     <list default="true" id="f2951e1b-e328-4f56-877a-143b89598f72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/common-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/common-action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel.php" beforeDir="false" afterPath="$PROJECT_DIR$/channel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channelprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/channelprocess.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/channelProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/channelProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/39-5e80f2360ca63.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/39-5e80f236347d5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/39-5e80f23664edf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/40-5e80f23dea153.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/40-5e80f23e1d7f1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/40-5e80f23e4ecef.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/41-5e80f254408e3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/41-5e80f25469c05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/41-5e80f25499bb7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactList.php" beforeDir="false" afterPath="$PROJECT_DIR$/contactList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ffmpeg/doc/ffmpeg-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/ffmpeg/doc/ffmpeg-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ffmpeg/doc/ffmpeg-filters.html" beforeDir="false" afterPath="$PROJECT_DIR$/ffmpeg/doc/ffmpeg-filters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ffmpeg/doc/ffplay-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/ffmpeg/doc/ffplay-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ffmpeg/doc/ffprobe-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/ffmpeg/doc/ffprobe-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/Account.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/ButtonProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/Constants.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/FormSanitizer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/Video.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/VideoDetailsFormProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/VideoInfoControls.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/VideoPlayer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/VideoinfoSection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/channelProcessor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/contactListProcessor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/showAllVideo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/videoProcessor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/videoUploadData.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processing.php" beforeDir="false" afterPath="$PROJECT_DIR$/processing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showallvideoprocess.php" beforeDir="false" afterPath="$PROJECT_DIR$/showallvideoprocess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/signIn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/signUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watch.php" beforeDir="false" afterPath="$PROJECT_DIR$/watch.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,10 +76,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/includes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MeTube1" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -116,6 +138,14 @@
       <workItem from="1585454233697" duration="599000" />
       <workItem from="1585457604242" duration="1005000" />
       <workItem from="1585493938630" duration="33785000" />
+      <workItem from="1585536442824" duration="3170000" />
+      <workItem from="1585540665956" duration="2302000" />
+      <workItem from="1585544915976" duration="2450000" />
+      <workItem from="1585547428723" duration="413000" />
+      <workItem from="1585547934387" duration="315000" />
+      <workItem from="1585582117252" duration="390000" />
+      <workItem from="1585591532924" duration="2316000" />
+      <workItem from="1585594390598" duration="16215000" />
     </task>
     <servers />
   </component>
@@ -154,6 +184,14 @@
     <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.21.1536.824/0.0.2048.1112/2560.-463.864.1496/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585269864339" />
     <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584558928730" />
     <state x="2732" y="129" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.0.864.1496/0.0.2048.1112/-1920.348.1536.824@2560.0.864.1496" timestamp="1585163963118" />
+    <state x="2606" y="-121" key="CommitChangelistDialog2" timestamp="1585622792596">
+      <screen x="2560" y="-463" width="864" height="1496" />
+    </state>
+    <state x="2606" y="-121" key="CommitChangelistDialog2/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585622792596" />
+    <state x="2772" y="26" key="FileChooserDialogImpl" timestamp="1585599563417">
+      <screen x="2560" y="-463" width="864" height="1496" />
+    </state>
+    <state x="2772" y="26" key="FileChooserDialogImpl/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585599563417" />
     <state width="821" height="432" key="GridCell.Tab.0.bottom" timestamp="1584565254868">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
@@ -181,15 +219,29 @@
     </state>
     <state x="2826" y="208" key="NewPhpFileDialog/-1920.21.1536.824/0.0.2048.1112/2560.-463.864.1496/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585346725046" />
     <state x="2826" y="208" key="NewPhpFileDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584823137327" />
+    <state x="2840" y="-4" key="RollbackChangesDialog" timestamp="1585596244336">
+      <screen x="2560" y="-463" width="864" height="1496" />
+    </state>
+    <state x="2840" y="-4" key="RollbackChangesDialog/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585596244336" />
     <state x="719" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1583974638995">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="719" y="380" key="com.intellij.ide.util.TipDialog/-1920.21.1536.824/2560.-463.1080.1880/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1583974638995" />
-    <state x="2847" y="-115" key="run.anything.popup" timestamp="1584383781501">
+    <state x="997" y="61" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585618013691">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="997" y="61" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585618013691" />
+    <state x="2579" y="-170" width="765" height="801" key="find.popup" timestamp="1585621837683">
+      <screen x="2560" y="-463" width="864" height="1496" />
+    </state>
+    <state x="398" y="137" width="1491" height="801" key="find.popup/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@0.0.2048.1112" timestamp="1585619519538" />
+    <state x="2579" y="-170" width="765" height="801" key="find.popup/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585621837683" />
+    <state x="2847" y="-115" key="run.anything.popup" timestamp="1585594229258">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
     <state x="681" y="259" key="run.anything.popup/-1920.21.1536.824/2560.-463.1080.1880/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1583974781607" />
     <state x="2847" y="-115" key="run.anything.popup/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584383781501" />
+    <state x="2847" y="-115" key="run.anything.popup/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585594229258" />
     <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup" timestamp="1585530896770">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>

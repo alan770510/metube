@@ -1,7 +1,7 @@
 <?php
 require_once('./includes/head.php');
-require_once('./includes/classes/videoUploadData.php');
-require_once('./includes/classes/videoProcessor.php');
+require_once('./includes/class/videoUploadData.php');
+require_once('./includes/class/videoProcessor.php');
     if(!isset($_POST['uploadButton'])){
         echo "No document upload!";
         exit();

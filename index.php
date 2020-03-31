@@ -1,10 +1,10 @@
    <?php
         require_once('./includes/head.php');
-        require_once('./includes/classes/showAllVideo.php');
+        require_once('./includes/class/showAllVideo.php');
         if(isset($_SESSION['userLoggedIn'])){
             echo '<div id="main-video-container"> 
                   <div id ="welcomemessage">Welcome to MeTube,'
-                .ucfirst($userLoggedInObj->getUsername()).'<br>';
+                .ucfirst($usernameLoggedIn).'<br>';
         }
         if(isset($_GET['category'])){
            echo 'You are under category -'.$_GET['category'];

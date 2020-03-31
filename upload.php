@@ -1,6 +1,6 @@
    <?php
    require_once('./includes/head.php');
-   require_once('./includes/classes/VideoDetailsFormProvider.php');
+   require_once('./includes/class/VideoDetailsFormProvider.php');
    ?>
    
 

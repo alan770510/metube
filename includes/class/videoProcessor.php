@@ -152,7 +152,7 @@ class videoProcessor{
                     }
                 }
                 $selected = $num == 1 ? 1 : 0;
-                $query = $this->con->prepare("INSERT INTO thumbnail(video_id, file_path, selected)
+                $query = $this->con->prepare("INSERT INTO thumbnails(video_id, file_path, selected)
                  VALUES(:video_id, :file_path, :selected)");
                 $query->bindParam(':video_id',$videoId);
                 $query->bindParam(':file_path',$fullThumbnailPath);
@@ -178,7 +178,7 @@ class videoProcessor{
             $secs = ($secs < 10 ) ? "0".$secs : $secs;
             $duration= $hours.$mins.$secs;
             //修改資料庫紀錄
-            $query = $this->con->prepare("UPDATE videos SET duration=:duration where id=:videoId");
+            $query = $this->con->prepare("UPDATE videos SET video_duration=:duration where id=:videoId");
             $query->bindParam(':duration',$duration);
             $query->bindParam(':videoId',$videoId);
             return $query->execute();

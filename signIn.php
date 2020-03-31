@@ -2,9 +2,9 @@
 //require_once('./includes/clemsonconfig.php');
 
 require_once('./includes/config.php');
-require_once('./includes/classes/FormSanitizer.php');
-require_once('./includes/classes/Account.php');
-require_once('./includes/classes/Constants.php');
+require_once('./includes/class/FormSanitizer.php');
+require_once('./includes/class/Account.php');
+require_once('./includes/class/Constants.php');
 
 $account = new Account($con);
 if(isset($_POST['submit_button'])){

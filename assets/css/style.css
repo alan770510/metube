@@ -6,8 +6,8 @@ body {
 }
 
 #page-container {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
     background-color: #fafafa;
 }
 
@@ -349,10 +349,17 @@ a.logo-container img {
 
 }
 #showAllVideo #page-nav{
-    width:100%;
+    /*width:100%;*/
     margin:20px auto;
-    text-align:center;
+    /*text-align:center*/
+
 }
+
+#showAllVideo #page-nav ul{
+    display: flex;
+    justify-content: center;
+}
+
 #showAllVideo  #allvideopage div{
     width:350px;
     height:300px;
@@ -391,14 +398,22 @@ a.logo-container img {
     flex-basis: 100%;
 
 }
-.container .tab-content>.active #page-nav{
-text-align:center;
+.container .tab-content>.active #page-nav ul{
+    display: flex;
+    justify-content: center;
 }
+
+/*.container .tab-content>.active #page-nav{*/
+/*text-align:center;*/
+/*}*/
 /*my subsciptions tab*/
 #showSubscriptions .video{
     display:flex;
     flex-direction: row;
     /*flex-flow: row wrap;*/
+}
+#showSubscriptions p{
+    margin: 10px 0px;
 }
 #showSubscriptions  .video div{
     width:200px;
@@ -411,7 +426,7 @@ text-align:center;
 
 }
 .container .tab-content>.active #showMyPlayList div{
-    margin: 10px;
+    margin: 10px 0px ;
 
 }
 .container .tab-content>.active #showMyPlayList p {

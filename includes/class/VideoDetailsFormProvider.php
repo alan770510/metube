@@ -64,7 +64,7 @@ class VideoDetailsFormProvider {
 
     private function createCategroiesInput(){
 //              DB query
-        $query = $this->con->prepare("select * from categories");
+        $query = $this->con->prepare("select * from category");
         $query -> execute();
         $html = "<div class='form-group'> <select name='category' class='form-control'>";
         while($row = $query->fetch(PDO::FETCH_ASSOC)){

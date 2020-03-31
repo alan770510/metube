@@ -1,11 +1,11 @@
 <?php
 require_once('./includes/head.php');
-require_once('./includes/classes/contactListProcessor.php');
+require_once('./includes/class/contactListProcessor.php');
 if(empty($usernameLoggedIn)){
     echo "<script>alert('You are not login, redirect to Login page after click'); location.href = 'signIn.php';</script>";
 //    header("refresh:3;url=signIn.php");
 }
-$contactList = new contactListProcessor($con,$usernameLoggedIn);
+$conntactList = new contactListProcessor($con,$usernameLoggedIn);
 echo "<div class = 'contactPage'>";
 echo "<div class = 'contactPage_head'> <h1><a href=\"contactList.php\">Contact List</a></h1><br><h3>"."Hello ".ucfirst($usernameLoggedIn).",</h3><br>";
 
@@ -13,17 +13,17 @@ echo "<div class = 'contactPage_head'> <h1><a href=\"contactList.php\">Contact L
 if (isset($_POST['Delete'])) {
 if(isset($_POST['contactList'])) {
 //    var_dump($_POST['contactList']);
-    $contactList->deleteContact($_POST['contactList']);
+    $conntactList->deleteContact($_POST['contactList']);
     header("Location: contactList.php");
 }}
 elseif(isset($_POST['Block'])){
 if(isset($_POST['contactList'])) {
-    $contactList->blockContact($_POST['contactList'],1);
+    $conntactList->blockContact($_POST['contactList'],1);
     header("Location: contactList.php");
 }}
 elseif(isset($_POST['unBlock'])){
     if(isset($_POST['contactList'])) {
-        $contactList->blockContact($_POST['contactList'],0);
+        $conntactList->blockContact($_POST['contactList'],0);
         header("Location: contactList.php");
     }}
 
@@ -36,7 +36,7 @@ if(isset($_POST['contactName'])) {
     if(isset($_POST['toBlock'])){
         $block = 1;
     }
-    $message = $contactList->addContact($_POST['contactName'],$_POST['groupName'],$block);
+    $message = $conntactList->addContact($_POST['contactName'],$_POST['groupName'],$block);
 
     if(empty($message)){
     header("Location: contactList.php");
@@ -47,9 +47,10 @@ if(isset($_POST['contactName'])) {
 ?>
 
 <!--增加新聯絡人-->
-<button id="showaddcontact" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Contact</button>
+<!-- Button trigger modal -->
+<button type="button" id="showaddcontact" class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Add New Contact</button>
 <br>
-<div class="modal" id="myModal"  tabindex="-1" role="dialog">
+<div class="modal" id="contactModal"  tabindex="-1" role="dialog">
     <div class="modal-dialog"  role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -61,20 +62,20 @@ if(isset($_POST['contactName'])) {
 
             <div class="modal-body">
                 <form id="contact_form" action="contactList.php" enctype="multipart/form-data" method="POST">
-				<div class="form-group">											  
-                <label for="contactName">Username:</label>  <input type="text" id="contactName" name="contactName" required>
-                </div>
-				<div class="form-group">
-                <label for="groupName">Groupname:&nbsp</label>
+                    <div class="form-group">
+                        <label for="contactName">Username:</label>  <input type="text" id="contactName" name="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="groupName">Groupname:&nbsp</label>
                         <select id="groupName" name="groupName">
-                        <option value="family">family</option>
-                        <option value="friends">friends</option>
-                        <option value="favorite">favorite</option>
+                            <option value="family">family</option>
+                            <option value="friends">friends</option>
+                            <option value="favorite">favorite</option>
                         </select>
-<!--                    &nbsp html空格-->
-                <label for="Blocked">Blocked:&nbsp&nbsp&nbsp</label><input type="checkbox" id="Blocked" name="toBlock" value="1" >
-                </div>
-            </form>
+                        <!--                    &nbsp html空格-->
+                        <label for="Blocked">Blocked:&nbsp&nbsp&nbsp</label><input type="checkbox" id="Blocked" name="toBlock" value="1" >
+                    </div>
+                </form>
 
             </div>
             <div class="modal-footer">
@@ -85,6 +86,7 @@ if(isset($_POST['contactName'])) {
         </div>
     </div>
 </div>
+
 <script>
     $("#submitForm").on('click', function() {
         $("#contact_form").submit();
@@ -93,7 +95,7 @@ if(isset($_POST['contactName'])) {
 <!--增加新聯絡人-->
 
 <?php
-$queryResult = $contactList->query();
+$queryResult = $conntactList->query();
 if(empty($queryResult)){
     echo "<h5>".'Your contact list is empty'."</h5>";
     die;
@@ -110,7 +112,7 @@ if(empty($queryResult)){
         <option value="none" selected disabled hidden>
             Select an Option
         </option>
-        <?php echo $contactList->getviewfilter()?>
+        <?php echo $conntactList->getviewfilter()?>
     </select>
         </div>
         <input type="submit"  class="btn btn-outline-info" name ="viewFilter" value ="Filter">
@@ -131,13 +133,13 @@ if(empty($queryResult)){
 
         if(isset($_POST['viewFilter'])){
             if(isset($_POST['groupfilter'])) {
-                echo $contactList->viewFilter($_POST['groupfilter']);}
+                echo $conntactList->viewFilter($_POST['groupfilter']);}
             else{
-                     echo $contactList->fetchData();
+                     echo $conntactList->fetchData();
             }
             }
         else{
-            echo $contactList->fetchData();
+            echo $conntactList->fetchData();
         }
         ?>
         </tbody>

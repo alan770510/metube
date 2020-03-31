@@ -1,5 +1,5 @@
 <?php
-require_once('./includes/classes/channelProcessor.php');
+require_once('./includes/class/channelProcessor.php');
 require_once('./includes/config.php');
 $usernameLoggedIn = isset($_SESSION['userLoggedIn']) ? $_SESSION['userLoggedIn'] : "";
 
@@ -31,12 +31,18 @@ if(isset($_POST['mysubscribe'])){
 
 if (isset($_POST['Delete'])) {
     if(isset($_POST['videoList'])) {
-    var_dump($_POST['videoList']);
+//    var_dump($_POST['videoList']);
         $channel = new channelProcessor($con,$_GET['channel'],$usernameLoggedIn);
         $channel->deleteVideo($_POST['videoList']);
         $reroute = 'channel.php?channel='.$_GET['channel'];
     header("Location:$reroute");
-    }}
+    }
+    else{
+        $reroute = 'channel.php?channel='.$_GET['channel'];
+        header("Location:$reroute");
+    }
+}
+
 
 if(isset($_POST['PlayList'])){
     $channel = new channelProcessor($con,$_GET['channel'],$usernameLoggedIn);

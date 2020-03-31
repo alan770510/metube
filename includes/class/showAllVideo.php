@@ -15,7 +15,7 @@ class showAllVideo
 
     public function create(){
         foreach ($this->video as $key => $value) {
-            $filePath = $value["File_path"];
+            $filePath = $value["file_path"];
             $title = $value["title"];
             $uploaded_by = $value["uploaded_by"];
             $views = $value["views"];
@@ -35,7 +35,7 @@ class showAllVideo
     }
 
     private function getthumbnail($videoid){
-        $query = $this->con->prepare("SELECT file_path From thumbnail where video_id =:video_id and selected=1");
+        $query = $this->con->prepare("SELECT file_path from thumbnails where video_id =:video_id and selected=1");
         $query->bindParam(':video_id',$videoid);
         $query->execute();
         return $this->thumbnail = $query->fetch(PDO::FETCH_ASSOC);
@@ -54,7 +54,7 @@ class showAllVideo
         $this->categoryFilterquery = $query->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($this->categoryFilterquery as $key => $value) {
-            $filePath = $value["File_path"];
+            $filePath = $value["file_path"];
             $title = $value["title"];
             $uploaded_by = $value["uploaded_by"];
             $views =$value["views"];

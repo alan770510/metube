@@ -41,14 +41,14 @@ class channelProcessor
     }
 
     private function getthumbnail($videoid){
-        $query = $this->con->prepare("SELECT file_path From thumbnail where video_id =:video_id and selected=1");
+        $query = $this->con->prepare("SELECT file_path from thumbnails where video_id =:video_id and selected=1");
         $query->bindParam(':video_id',$videoid);
         $query->execute();
         return $this->thumbnail = $query->fetch(PDO::FETCH_ASSOC);
 
     }
     private function getallthumbnail($videoid){
-        $query = $this->con->prepare("SELECT file_path From thumbnail where video_id =:video_id ");
+        $query = $this->con->prepare("SELECT file_path from thumbnails where video_id =:video_id ");
         $query->bindParam(':video_id',$videoid);
         $query->execute();
         return $this->thumbnail = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -67,9 +67,9 @@ class channelProcessor
             $videolink = "<a href='watch.php?id=$videoid'><img src='$thumbnailpath' alt='$title' height='200' width='300'></a><br>";
 
 
-            array_push($this->signinallVideoPath,"<input type=\"checkbox\" name=\"videoList[]\" value = \"$videoid\">
+            array_push($this->signinallVideoPath,"<div><input type=\"checkbox\" name=\"videoList[]\" value = \"$videoid\">
                     <div>$videolink<span id='videoTitle'>$title</span><br>$uploaded_by<br>$views views &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $upload_date
-                    </div> &emsp;&emsp;&emsp;");
+                    </div></div> &emsp;&emsp;&emsp;");
         }
 
         return $this->signinallVideoPath;
@@ -91,6 +91,7 @@ class channelProcessor
             $this->uservideo = $query->fetchAll(PDO::FETCH_ASSOC);
             $subscribeVideoPath ="";
             $count = 1;
+            if($this->uservideo){
             foreach ($this->uservideo as  $value) {
                 $title = $value["title"];
                 $uploaded_by = $value["uploaded_by"];
@@ -108,8 +109,11 @@ class channelProcessor
 //                每個subscribe channel 只顯示四筆
                 if($count > 4) {break;}
             }
-            array_push($this->subscribePath,"<a href=\"channel.php?channel=$username\">$username's Channel</a> <div class='video'> $subscribeVideoPath </div>
-            ");
+                array_push($this->subscribePath,"<p><a href=\"channel.php?channel=$username\">$username's Channel</a></p> <div class='video'> $subscribeVideoPath </div>");
+            }else{
+                array_push($this->subscribePath,"<p><a href=\"channel.php?channel=$username\">$username's Channel</a><p>This channel doesn't have any video yet!</p>");
+            }
+
         }
         return $this->subscribePath;
 
@@ -185,7 +189,7 @@ class channelProcessor
     }
     public function deleteVideo($deleteList){
         foreach ($this->video as  $value) {
-            $this->deleteFile($value["File_path"]);
+            $this->deleteFile($value["file_path"]);
             $videoid = $value["id"];
             $thumbnailpath = $this->getallthumbnail($videoid);
             foreach($thumbnailpath as $thumbialvalue){
@@ -198,7 +202,7 @@ class channelProcessor
         $mainUser = "'".$this->usernameLoggedIn."'";
         $query = $this->con->prepare("DELETE FROM videos WHERE uploaded_by= $mainUser AND id IN ($qMarks)");
         $query->execute($deleteList);
-        $query = $this->con->prepare("DELETE FROM thumbnail WHERE  video_id IN ($qMarks)");
+        $query = $this->con->prepare("DELETE from thumbnails WHERE  video_id IN ($qMarks)");
         $query->execute($deleteList);
     }
     private function checkPlayList($playlistname){
@@ -241,7 +245,8 @@ class channelProcessor
         $dbresult = $query->fetchAll(PDO::FETCH_ASSOC);
         $allplaylist ='';
         foreach ($dbresult as  $value) {
-            $allplaylist .= '<p>'.$value["playlistname"].'<p>';
+            $allplaylist .= '<p><input type="checkbox" name="playList[]" value ='.$value["playlistname"].'>';
+            $allplaylist .=  '&nbsp'.$value["playlistname"].'</p>';
             $allVideoid = $this->getVideoInfoViaPlayList($value["playlistname"]);
             $qMarks = str_repeat('?,', count($allVideoid) - 1) . '?';
             $allvideoidarray =array();
@@ -253,6 +258,7 @@ class channelProcessor
             $videoresult = $query->fetchAll(PDO::FETCH_ASSOC);
             $playlistVideoPath = '';
             $count =0;
+            if($videoresult){
             foreach ($videoresult as  $value) {
                 $title = $value["title"];
                 $uploaded_by = $value["uploaded_by"];
@@ -271,6 +277,10 @@ class channelProcessor
                 if($count > 4) {break;}
             }
             $allplaylist .=  $playlistVideoPath;
+            }
+            else{
+                $allplaylist.='<p> This Playlist doesn\'t have any videos yet!<p>';
+            }
         }
         return $allplaylist;
     }
@@ -314,41 +324,40 @@ class channelProcessor
         }
 
 //      create playlist button
-        $createPlaylistButton = " <input type=\"button\" class=\"btn btn-outline-primary\" id=\"createPlayList\" name = \"createPlayList\" value =\"Create PlayList\"><br>";
+        $createPlaylistButton = " <input type=\"button\" class=\"btn btn-outline-primary\" id=\"createPlayList\" name = \"createPlayList\" value =\"Create PlayList\">";
+        $deletePlaylistButton = " <input type=\"button\" class=\"btn btn-outline-danger\" id=\"deletePlayList\" name = \"deletePlayList\" value =\"Delete PlayList\"><br>";
 
 
-
-        return "<ul class=\"nav nav-tabs \" id=\"myTab1\">
-        <li id=\"channel1\" class=\"active\"><a data-toggle=\"tab\" href=\"#channel2\">Channel</a></li>
-        <li><a data-toggle=\"tab\" href=\"#mySubscriptions\">My Subscriptions</a></li>
-        <li id=\"myPlayList1\" ><a data-toggle=\"tab\" href=\"#myPlayList2\">My Playlist</a></li>
-        <li><a data-toggle=\"tab\" href=\"#menu3\">Menu 3</a></li>
-    </ul>
-
-    <div class=\"tab-content\">
-        <div id=\"channel2\" class=\"tab-pane fade in active\">
-            <form action=\"channelprocess.php?channel=$this->user\" method=\"post\">
+         return "<ul class=\"nav nav-tabs\" id=\"myTab1\" role=\"tablist\">
+  <li id=\"channel1\" class=\"nav-item\">
+    <a id=\"channel1\" class=\"nav-link active\" id=\"home-tab\" data-toggle=\"tab\" href=\"#channel2\" role=\"tab\" aria-controls=\"home\" aria-selected=\"true\">Channel</a>
+  </li>
+  <li class=\"nav-item\">
+    <a class=\"nav-link\" id=\"profile-tab\" data-toggle=\"tab\" href=\"#mySubscriptions\" role=\"tab\" aria-controls=\"profile\" aria-selected=\"false\">My Subscriptions</a>
+  </li>
+  <li class=\"nav-item\">
+    <a class=\"nav-link\" id=\"myPlayList1\" data-toggle=\"tab\" href=\"#myPlayList2\" role=\"tab\" aria-controls=\"contact\" aria-selected=\"false\">My Playlist</a>
+  </li>
+</ul>
+<div class=\"tab-content\" id=\"myTabContent\">
+  <div class=\"tab-pane fade show active\" id=\"channel2\" role=\"tabpanel\" aria-labelledby=\"home-tab\">
+  <form action=\"channelprocess . php ? channel = $this->user\" method=\"post\">
             $deletebutton
             <div id=\"show\">
             </div>
-            </form>
-            <div id=\"page-nav\">
-                <nav aria-label=\"Page navigation\">
-                    <ul class=\"pagination\" id=\"pagination\"></ul>
-                </nav>
-            </div>
+  </form>
+   <div id=\"page-nav\">
+            <nav aria-label=\"Page navigation\">
+            <ul class=\"pagination\" id=\"pagination\"></ul>
+            </nav>
         </div>
-        <div id=\"mySubscriptions\" class=\"tab-pane fade\">
-           <div id=\"showSubscriptions\"></div>
-        </div>
-        <div id=\"myPlayList2\" class=\"tab-pane fade\">
-            $createPlaylistButton
-            <div id=\"showMyPlayList\"></div>
-        </div>
-        <div id=\"menu3\" class=\"tab-pane fade\">
-            <h3>Menu 3</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        </div>
-    </div>";
+</div>
+  <div class=\"tab-pane fade\" id=\"mySubscriptions\" role=\"tabpanel\" aria-labelledby=\"profile-tab\">
+  <div id=\"showSubscriptions\"></div>
+  </div>
+  <div class=\"tab-pane fade\" id=\"myPlayList2\" role=\"tabpanel\" aria-labelledby=\"contact-tab\"> 
+  $createPlaylistButton
+  <div id=\"showMyPlayList\"></div></div>
+</div>";
     }
 }

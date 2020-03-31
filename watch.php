@@ -1,7 +1,7 @@
 <?php
     require_once('./includes/head.php');
-    require_once('./includes/classes/VideoPlayer.php');
-    require_once('./includes/classes/VideoinfoSection.php');
+    require_once('./includes/class/VideoPlayer.php');
+    require_once('./includes/class/VideoinfoSection.php');
 
         if(!isset($_GET['id'])){
             echo 'illegal Video id';

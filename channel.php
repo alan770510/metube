@@ -1,9 +1,9 @@
 <?php
 require_once('./includes/head.php');
-require_once('./includes/classes/channelProcessor.php');
-//if(!isset($_GET['channel'])){
-//    echo "<script>alert('You are not choose any channel, redirect to Home page after click'); location.href = 'index.php';</script>";
-//}
+require_once('./includes/class/channelProcessor.php');
+if(!isset($_GET['channel'])){
+    echo "<script>alert('You are not choose any channel, redirect to Home page after click'); location.href = 'index.php';</script>";
+}
 $channel = new channelProcessor($con,$_GET['channel'],$usernameLoggedIn);
 
 ?>
@@ -122,125 +122,108 @@ $("#confirm").on('click', function() {
 
 //            分頁按鈕    $(function () is jQuery short-hand for $(document).ready(function() { ... });
          $(function () {
-             <?php if(isset($_GET['tab'])) {
-                 $tab = $_GET['tab'];
-                 $tab1= $tab.'1';
-                 $tab2= $tab.'2';
 
-                 //頁面載入後自動跳到某個tab
-                 echo "var activetab = $(\"#channel1\");
-                 var activecontent = $(\"#channel2\");
-                 var toactivetab = $(\"#$tab1\");
-                 var toactivecontent = $(\"#$tab2\");
-                 activetab.toggleClass(\"active\");
-                 toactivetab.toggleClass(\"active\");
-                 activecontent.toggleClass(\"active\"); 
-                 activecontent.toggleClass(\"in\"); 
-                 toactivecontent.toggleClass(\"active\");
-                  toactivecontent.toggleClass(\"in\");
-                 ";
-         }
-             ?>
-            var user='<?php echo $_GET['channel']; ?>';
-        //channel tab + page
-        $.ajax({
-            type:'POST',
-            // url:'includes/classes/channelProcessor.php',
-             url:'channelprocess.php',
-            data:{
-                pagefunction:"1",
-                user:user
-            },
-            datatype:'json',
-            success:function(result){
-                final1 = JSON.parse(result);
-                // console.log('channelresult=',final);
+             var user='<?php echo $_GET['channel']; ?>';
+         //channel tab + page
+         $.ajax({
+             type:'POST',
+             // url:'includes/class/channelProcessor.php',
+              url:'channelprocess.php',
+             data:{
+                 pagefunction:"1",
+                 user:user
+             },
+             datatype:'json',
+             success:function(result){
+                 final1 = JSON.parse(result);
+                 // console.log('channelresult=',final);
 
-                 datalength = final1.length;
-                 if (datalength != 0){
-                // console.log(final.length);
-                window.pagObj = $('#pagination').twbsPagination({
-                    // totalPages如果妳一頁最多顯示4筆資料,那總長度就是除4
-                    totalPages: (datalength % 4) ?  (datalength /4) + 1: datalength /4,
-                    visiblePages: 5,
-                    onPageClick: function (event, page) {
+                  datalength = final1.length;
+                  if (datalength != 0){
+                 // console.log(final.length);
+                 window.pagObj = $('#pagination').twbsPagination({
+                     // totalPages如果妳一頁最多顯示4筆資料,那總長度就是除4
+                     totalPages: (datalength % 4) ?  (datalength /4) + 1: datalength /4,
+                     visiblePages: 5,
+                     onPageClick: function (event, page) {
 
-                        document.getElementById("show").innerHTML="";
+                         document.getElementById("show").innerHTML="";
 
 
-                        console.log(page + ' (from options)');
-                        for ($i = 4; $i >0 ; $i--) {
-                            if ( final1[page * 4 - $i]){
-                                // console.log('channelresult=',final1[page * 4 - $i]);
-                                document.getElementById("show").innerHTML += final1[page * 4 - $i] ;
-                            }
-                        }
+                         console.log(page + ' (from options)');
+                         for ($i = 4; $i >0 ; $i--) {
+                             if ( final1[page * 4 - $i]){
+                                 // console.log('channelresult=',final1[page * 4 - $i]);
+                                 document.getElementById("show").innerHTML += final1[page * 4 - $i] ;
+                             }
+                         }
 
-                    }
-                }).on('page', function (event, page) {
-                    console.info(page + ' (from event listening)');
-                });
-
-                 }else{
-                     document.getElementById("show").innerHTML ="";
-                 }
-            }
-        });
-    //    mysubscriptions
-
-             $.ajax({
-                 type:'POST',
-                 url:'channelprocess.php',
-                 data:{
-                     mysubscribe:"1",
-                     user:user
-                 },
-                 datatype:'json',
-                 success:function(result){
-                     final = JSON.parse(result);
-                      // console.log(final);
-                     // https://www.w3schools.com/js/js_array_iteration.asp
-                     final.forEach(arrayfunction);
-                     function arrayfunction(value){
-                         document.getElementById("showSubscriptions").innerHTML += value;
                      }
+                 }).on('page', function (event, page) {
+                     console.info(page + ' (from event listening)');
+                 });
 
-                 }
-             });
-    //      Myplaylist
-             $.ajax({
-                 type:'POST',
-                 url:'channelprocess.php',
-                 data:{
-                     myplaylist:"1",
-                     user:user
-                 },
-                 datatype:'json',
-                 success:function(result){
-                     final2 = JSON.parse(result);
-                     // console.log(final);
-                     document.getElementById("showMyPlayList").innerHTML += final2;
+                  }else{
+                      document.getElementById("show").innerHTML ="";
+                  }
+             }
+         });
+     //    mysubscriptions
+
+              $.ajax({
+                  type:'POST',
+                  url:'channelprocess.php',
+                  data:{
+                      mysubscribe:"1",
+                      user:user
+                  },
+                  datatype:'json',
+                  success:function(result){
+                      final = JSON.parse(result);
+                       // console.log(final);
+                      // https://www.w3schools.com/js/js_array_iteration.asp
+                      final.forEach(arrayfunction);
+                      function arrayfunction(value){
+                          document.getElementById("showSubscriptions").innerHTML += value;
+                      }
+
+                  }
+              });
+     //      Myplaylist
+              $.ajax({
+                  type:'POST',
+                  url:'channelprocess.php',
+                  data:{
+                      myplaylist:"1",
+                      user:user
+                  },
+                  datatype:'json',
+                  success:function(result){
+                      final2 = JSON.parse(result);
+                      // console.log(final);
+                      document.getElementById("showMyPlayList").innerHTML += final2;
 
 
 
-                 }
-             });
+                  }
+              });
 
 
-    });
+     });
 
 
 
-</script>
+ </script>
 
-<!--//想要自動跳到某個tab  但是一直不行 用上面的替代方法 bootstrap nav
-/*
-   if(isset($_GET['tab'])){
-//      $('#myTab li:last-child a').tab('show');
-//       $('.nav-tabs a[href="#myPlayList"]').tab('show');
-//    echo '<script> $(function () {$(\'#myTab1 a[href="#myPlayList"]\').tab(\'show\')});</script>';
-//}
-*/-->
+ <!--想要自動跳到某個tab  但是一直不行 用上面的替代方法 bootstrap nav-->
+ <?php
+//    if(isset($_GET['tab'])){
+// //<!--     $('#myTab li:last-child a').tab('show');-->
+// //<!--       $('.nav-tabs a[href="#myPlayList"]').tab('show');-->
+//     echo '<script> $(function () {$(\'#myTab1 a[href="#myPlayList"]\').tab(\'show\')});</script>';
+// }
+    ?>
+
 </div>
 </div>
 </div>

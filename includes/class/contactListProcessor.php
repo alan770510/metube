@@ -58,21 +58,21 @@ class contactListProcessor
         $query = $this->con->prepare("DELETE FROM contactlist WHERE mainuser= $mainUser AND username IN ($qMarks)");
         $query->execute($deleteList);
     }
-    public function addContact($contactName,$groupName,$block){
-        if(!strcmp($contactName,$this->usernameLoggedIn))
+    public function addContact($conntactName,$groupName,$block){
+        if(!strcmp($conntactName,$this->usernameLoggedIn))
         {
             return "You cannot add yourself";
         }
-        if(!empty($this->checkDuplicate($contactName))){
-            return "You already have this person ".$contactName." in your contact list";
+        if(!empty($this->checkDuplicate($conntactName))){
+            return "You already have this person ".$conntactName." in your contact list";
         }
-        if(empty($this->userexist($contactName))){
-            return "The username ".$contactName." that you input not exist in MeTube system";
+        if(empty($this->userexist($conntactName))){
+            return "The username ".$conntactName." that you input not exist in MeTube system";
         }
 
         $query = $this->con->prepare("INSERT INTO contactlist (mainuser,username,groupname,blocked) value(:mainuser,:contactName,:groupName,:blocked)");
         $query->bindParam(':mainuser',$this->usernameLoggedIn);
-        $query->bindParam(':contactName',$contactName);
+        $query->bindParam(':contactName',$conntactName);
         $query->bindParam(':groupName',$groupName);
         $query->bindParam(':blocked',$block);
         $query->execute();

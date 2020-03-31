@@ -8,7 +8,7 @@ $(document).ready(function () {
         } else {
             nav.show();
         }
-        // Add or remove one or more classes from each element in the set of matched elements,
+        // Add or remove one or more class from each element in the set of matched elements,
         main.toggleClass("paddingleft");
     })
 });

@@ -35,7 +35,7 @@ class Video
         return $this->sqlData["duration"];
     }
     public function getFilePath(){
-        return $this->sqlData["File_path"];
+        return $this->sqlData["file_path"];
     }
     public function getCategory(){
         return $this->sqlData["category"];
