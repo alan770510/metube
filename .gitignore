@@ -1,3 +1,2 @@
 *.driveupload
 uploads/videos/*
-!uploads/videos/thumbnails/

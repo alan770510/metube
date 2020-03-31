@@ -19,7 +19,8 @@ class showAllVideo
             $title = $value["title"];
             $uploaded_by = $value["uploaded_by"];
             $views = $value["views"];
-            $upload_date = date('Y-m-d H:i:s', $value["upload_date"]);
+            $upload_date = $value["upload_date"];
+//            $upload_date = date('Y-m-d H:i:s', $value["upload_date"]);
             $videoid = $value["id"];
             $thumbnailpath = $this->getthumbnail($videoid);
             $thumbnailpath = $thumbnailpath["file_path"];
@@ -48,7 +49,7 @@ class showAllVideo
 
         }
 
-        $query = $this->con->prepare("SELECT videos.* From videos inner join categories on videos.category = categories.id where categories.name=:category");
+        $query = $this->con->prepare("SELECT videos.* From videos inner join category on videos.category = category.id where category.name=:category");
         $query->bindParam(':category',$category);
         $query->execute();
         $this->categoryFilterquery = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -58,7 +59,8 @@ class showAllVideo
             $title = $value["title"];
             $uploaded_by = $value["uploaded_by"];
             $views =$value["views"];
-            $upload_date = date('Y-m-d H:i:s',$value["upload_date"]);
+            $upload_date = $value["upload_date"];
+//            $upload_date = date('Y-m-d H:i:s',$value["upload_date"]);
             $videoid = $value["id"];
             $thumbnailpath = $this->getthumbnail($videoid);
             $thumbnailpath = $thumbnailpath["file_path"];
@@ -74,7 +76,7 @@ class showAllVideo
     }
     public function getCategoryList()
     {
-        $query = $this->con->prepare("SELECT distinct categories.* From videos inner join categories on videos.category = categories.id");
+        $query = $this->con->prepare("SELECT distinct category.* From videos inner join category on videos.category = category.id");
         $query->execute();
         $this->categorydb = $query->fetchAll(PDO::FETCH_ASSOC);
         foreach ($this->categorydb as $key => $value) {

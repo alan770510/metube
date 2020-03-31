@@ -101,7 +101,8 @@ class videoProcessor{
             $query->bindParam(':privacy',$videoUploadData->privacy);
             $query->bindParam(':file_path',$finalFilePath);
             $query->bindParam(':category',$videoUploadData->category);
-            $updateTime = time();
+//            $updateTime = time();
+            $updateTime = date("Y-m-d H:i:s");
             $query->bindParam(':upload_date',$updateTime);
             return $query->execute();
         }

@@ -294,26 +294,23 @@ class channelProcessor
         }
         return "
           $button
-        <ul class=\"nav nav-tabs \">
-        <li class=\"active\"><a data-toggle=\"tab\" href=\"#Channel\">Channel</a></li>
-       
-    </ul>
-
-    <div class=\"tab-content\">
-        <div id=\"Channel\" class=\"tab-pane fade in active\">
-            
-            <div id=\"show\">
-            </div>
-           
-            <div id=\"page-nav\">
-                <nav aria-label=\"Page navigation\">
-                    <ul class=\"pagination\" id=\"pagination\"></ul>
-                </nav>
-            </div>
-        </div>
-   
-    </div>
-        ";
+        <ul class=\"nav nav-tabs\" id=\"myTab1\" role=\"tablist\">
+  <li id=\"channel1\" class=\"nav-item\">
+    <a id=\"channel1\" class=\"nav-link active\" id=\"home-tab\" data-toggle=\"tab\" href=\"#channel2\" role=\"tab\" aria-controls=\"home\" aria-selected=\"true\">Channel</a>
+         </li >
+</ul >
+<div class=\"tab-content\" id = \"myTabContent\" >
+  <div class=\"tab-pane fade show active\" id = \"channel2\" role = \"tabpanel\" aria-labelledby = \"home-tab\" >
+          <div id = \"show\" >
+            </div >
+    <div id = \"page-nav\" >
+            <nav aria-label = \"Page navigation\" >
+            <ul class=\"pagination\" id = \"pagination\" ></ul >
+            </nav >
+        </div >
+</div >
+ 
+</div >";
     }
     public function showall(){
 //        如果沒影片就不要出現刪除按鈕
