@@ -55,12 +55,13 @@ class videoProcessor{
                 return false;
             }
 //            Must add before generate thumbnails function
-            if(!$this->updateFileSize($finalFilePath)){
+            $videoId = $this->con->lastInsertId();
+            if(!$this->updateFileSize($finalFilePath,$videoId)){
                 echo 'Update file size to Database failed';
                 return false;
             }
             //生成三張縮略圖
-            if(!$this->generateThumbnails($finalFilePath)){
+            if(!$this->generateThumbnails($finalFilePath,$videoId)){
                 echo 'Get video duration failed';
                 return false;
             }
@@ -140,13 +141,13 @@ class videoProcessor{
             return true;
         }
         //生成縮略圖
-        private function generateThumbnails($filepath){
+        private function generateThumbnails($filepath,$videoId){
             $thumbnailsize = "210x118";
             $numThumbnails =3;
             $pathToThumbnails = "uploads/videos/thumbnails";
 //           抓取video duration
             $duration = $this->getVideoDuration($filepath);
-            $videoId = $this->con->lastInsertId();
+//            $videoId = $this->con->lastInsertId();
             $this->updateDuration($duration,$videoId);
             for($num = 1;$num <= $numThumbnails;$num++){
                 $imageName = uniqid().'.jpg';
@@ -194,13 +195,8 @@ class videoProcessor{
             $query->bindParam(':videoId',$videoId);
             return $query->execute();
         }
-    private function updateFileSize($finalFilePath){
+    private function updateFileSize($finalFilePath,$videoId){
         $finalFileSize = filesize($finalFilePath);
-        echo 'filesize';
-        print_r($finalFileSize);
-        $videoId = $this->con->lastInsertId();
-        echo 'video id';
-        print_r($videoId);
         $query = $this->con->prepare("UPDATE videos SET file_size=:file_size where id=:videoId");
         $query->bindParam(':file_size',$finalFileSize);
         $query->bindParam(':videoId',$videoId);
