@@ -38,10 +38,12 @@ class videoProcessor{
         //move_uploaded_file內建函數
         if(move_uploaded_file($videoData['tmp_name'],$tempFilePath)){
             $finalFilePath = $targetDir.uniqid().'.mp4';
+
             if(!$this->insertVideoData($videoUploadData,$finalFilePath)){
                 echo 'Video file input to Database failed';
                 return false;
             }
+
             //測試視頻轉碼是否成功
             if(!$this->convertVideoToMp4($tempFilePath,$finalFilePath)){
                 echo 'Convert video failed';
@@ -52,11 +54,17 @@ class videoProcessor{
                 echo 'Delete original video file failed';
                 return false;
             }
+//            Must add before generate thumbnails function
+            if(!$this->updateFileSize($finalFilePath)){
+                echo 'Update file size to Database failed';
+                return false;
+            }
             //生成三張縮略圖
             if(!$this->generateThumbnails($finalFilePath)){
                 echo 'Get video duration failed';
                 return false;
             }
+
 //            echo 'Generate Thumbnails successful';
             echo 'Video upload successful <br>';
             return true;
@@ -95,7 +103,9 @@ class videoProcessor{
         private function insertVideoData($videoUploadData,$finalFilePath){
             $query =$this->con->prepare("INSERT INTO videos(uploaded_by,title, description,privacy,file_path,category,upload_date)
                                         VALUES(:uploaded_by, :title, :description, :privacy, :file_path, :category, :upload_date)");
-            $query->bindParam(':uploaded_by',$videoUploadData->uploadBy);
+//            $query->bindParam(':uploaded_by',$videoUploadData->uploadBy);
+            $uploaded_by ='alan';
+            $query->bindParam(':uploaded_by',$uploaded_by);
             $query->bindParam(':title',$videoUploadData->title);
             $query->bindParam(':description',$videoUploadData->description);
             $query->bindParam(':privacy',$videoUploadData->privacy);
@@ -184,4 +194,16 @@ class videoProcessor{
             $query->bindParam(':videoId',$videoId);
             return $query->execute();
         }
+    private function updateFileSize($finalFilePath){
+        $finalFileSize = filesize($finalFilePath);
+        echo 'filesize';
+        print_r($finalFileSize);
+        $videoId = $this->con->lastInsertId();
+        echo 'video id';
+        print_r($videoId);
+        $query = $this->con->prepare("UPDATE videos SET file_size=:file_size where id=:videoId");
+        $query->bindParam(':file_size',$finalFileSize);
+        $query->bindParam(':videoId',$videoId);
+        return $query->execute();
+    }
 }
