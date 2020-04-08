@@ -42,7 +42,7 @@
 //            $pw = hash('sha512',$pw);
             $pw = md5($pw);
             $signUpTime = time();
-            $query = $this->con->prepare("INSERT INTO users (first_name,last_name, username, email, password, sign_up_time, profile_pic)
+            $query = $this->con->prepare("INSERT INTO users (first_name,last_name, username, email, password, sign_up_date, avatar_path)
                                            VALUE(:fn, :ln, :un, :em, :pw,:sign_up, :pic)");
             $query->bindParam(':fn',$fn);
             $query->bindParam(':ln',$ln);
