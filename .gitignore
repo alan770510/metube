@@ -1,2 +1,3 @@
 *.driveupload
-uploads/videos/*
+uploads/videos/
+.idea/
