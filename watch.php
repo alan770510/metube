@@ -16,6 +16,7 @@
 
 
 ?>
+ <script src="assets/js/videoPlayerActions.js"></script>
  <div class="watch-left-column">
     <?php
     $videoPlayer = new VideoPlayer($video);

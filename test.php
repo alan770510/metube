@@ -1,71 +1,47 @@
-<ul class=\"nav nav-tabs \" id=\"myTab1\">
-<li id=\"channel1\" class=\"active\">
-    <a data-toggle=\"tab\" href=\"#channel2\">Channel</a></li>
-<li><a data-toggle=\"tab\" href=\"#mySubscriptions\">My Subscriptions</a></li>
-<li id=\"myPlayList1\" ><a data-toggle=\"tab\" href=\"#myPlayList2\">My Playlist</a></li>
-<li><a data-toggle=\"tab\" href=\"#menu3\">Menu 3</a></li>
-</ul>
+<?php
 
-<div class=\"tab-content\">
-    <div id=\"channel2\" class=\"tab-pane fade in active\">
-    <form action=\"channelprocess.php?channel=$this->user\" method=\"post\">
-        $deletebutton
-        <div id=\"show\">
-        </div>
-    </form>
-    <div id=\"page-nav\">
-        <nav aria-label=\"Page navigation\">
-        <ul class=\"pagination\" id=\"pagination\"></ul>
-        </nav>
-    </div>
-</div>
-<div id=\"mySubscriptions\" class=\"tab-pane fade\">
-<div id=\"showSubscriptions\"></div>
-</div>
-<div id=\"myPlayList2\" class=\"tab-pane fade\">
-$createPlaylistButton
-<div id=\"showMyPlayList\"></div>
-</div>
-<div id=\"menu3\" class=\"tab-pane fade\">
-<h3>Menu 3</h3>
-<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-</div>
-</div>
-<!--             --><?php
-//                if(isset($_GET['tab'])) {
-//                    echo "$('#myTab1 a[href=\"#myPlayList2\"]').tab('show');";
-//                }
-//             ?>
 
-<ul class="nav nav-pills mb-3" id="myTab1" role="tablist">
-    <li id="channel1" class="nav-item">
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#channel2" role="tab" aria-controls="pills-home" aria-selected="true">Channel</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#mySubscriptions" role="tab" aria-controls="pills-profile" aria-selected="false">My Subscriptions</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#myPlayList2" role="tab" aria-controls="pills-contact" aria-selected="false">My Playlist</a>
-    </li>
-</ul>
-<div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="channel2" role="tabpanel" aria-labelledby="pills-home-tab">
-        <form action=\"channelprocess.php?channel=$this->user\" method=\"post\">
-            $deletebutton
-            <div id=\"show\">
-            </div>
-        </form>
-        <div id=\"page-nav\">
-            <nav aria-label=\"Page navigation\">
-            <ul class=\"pagination\" id=\"pagination\"></ul>
-            </nav>
-        </div>
-    </div>
-    <div class="tab-pane fade" id="mySubscriptions" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div id=\"showSubscriptions\"></div>
-    </div>
-    <div class="tab-pane fade" id="myPlayList2" role="tabpanel" aria-labelledby="pills-contact-tab">
-        $createPlaylistButton
-        <div id=\"showMyPlayList\"></div>
-    </div>
-</div>
+
+$link = mysqli_connect('localhost',"root","",'youtube','3308');
+$skill = '';
+if(isset($_POST['C'])){
+    $skill .= $_POST['C'];
+}
+if(isset($_POST['Java'])){
+    $skill .= $_POST['Java'];}
+if(isset($_POST['Python'])){
+    $skill .= $_POST['Python'];}
+
+
+$name= $_POST['Name'];
+$major = $_POST['Major'];
+$gender = $_POST['Gender'];
+$research = $_POST['research_interests'];
+$email = $_POST['email'];
+$Insert ="INSERT INTO skills( name,email, major,gender,skill,research) VALUES ('".$name."','"
+.$email."','".$major."','".$gender."','".$skill."','".$research."')";
+echo $Insert;
+
+mysqli_query($link, $Insert) or die("Query error: ". mysqli_error($link)."\n");
+$query = "SELECT * FROM skills";
+$result = mysqli_query($link, $query) or die("Query error: ". mysqli_error($link)."\n");
+echo "<table>\n";
+echo "\t<tr>\n";
+echo "\t\t<td>Name</td>\n";
+echo "\t\t<td>Email</td>\n";
+echo "\t\t<td>Major</td>\n";
+echo "\t\t<td>Gender</td>\n";
+echo "\t\t<td>Programming Skills</td>\n";
+echo "\t\t<td>research interests</td>\n";
+echo "\t</tr>\n";
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    echo "\t<tr>\n";
+    foreach($line as $col_value){
+        echo "\t\t<td>$col_value</td>\n";
+    }
+    echo "\t</tr>\n";
+}
+echo "</table>\n";
+mysqli_free_result($result);
+mysqli_close($link);
+?>

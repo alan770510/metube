@@ -2,37 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2951e1b-e328-4f56-877a-143b89598f72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajax/likeVideo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/videoPlayerActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/31-5e7f81fe6ac27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/31-5e7f81fe8ee00.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/31-5e7f81febccd2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/42-5e8148f43c2af.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/42-5e8148f4615ea.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/42-5e8148f491d17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/43-5e81490134fd3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/43-5e8149015dde9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/43-5e8149018f2a7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/44-5e8149093ebbc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/44-5e8149096706e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/44-5e81490996752.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/45-5e81490f2bdee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/45-5e81490f55324.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/45-5e81490f8c11c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/46-5e814917bee7b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/46-5e814917e7406.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/46-5e8149182d38e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/47-5e8166f06c6a7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/47-5e8166f08e38e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/47-5e8166f0bd1a0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/51-5e82a250abb71.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/52-5e82a314ba8f9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/52-5e82a314dcac6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/52-5e82a31513d7a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/53-5e82a3923c1a1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/53-5e82a3925dfa2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/videos/thumbnails/53-5e82a39289fac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class/Video.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class/VideoInfoControls.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class/VideoInfoControls.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watch.php" beforeDir="false" afterPath="$PROJECT_DIR$/watch.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +125,10 @@
       <workItem from="1585628023390" duration="522000" />
       <workItem from="1585684422113" duration="91000" />
       <workItem from="1586368664045" duration="1986000" />
+      <workItem from="1588357715248" duration="8839000" />
+      <workItem from="1588380161516" duration="2852000" />
+      <workItem from="1588391859507" duration="1129000" />
+      <workItem from="1588699174038" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="After merge">
       <created>1585622886045</created>
@@ -184,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586370437472</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update file size in video table&#10;fix signup bug">
+      <created>1588357847128</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588357847128</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,14 +216,16 @@
     <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.21.1536.824/0.0.2048.1112/2560.-463.864.1496/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585269864339" />
     <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584558928730" />
     <state x="2732" y="129" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.0.864.1496/0.0.2048.1112/-1920.348.1536.824@2560.0.864.1496" timestamp="1585163963118" />
-    <state x="2606" y="-121" key="CommitChangelistDialog2" timestamp="1586370436861">
-      <screen x="2560" y="-463" width="864" height="1496" />
+    <state x="109" y="254" key="CommitChangelistDialog2" timestamp="1588357846163">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state x="109" y="254" key="CommitChangelistDialog2/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1588357846163" />
     <state x="2606" y="-121" key="CommitChangelistDialog2/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1586370436861" />
     <state x="2606" y="-121" key="CommitChangelistDialog2/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585622884659" />
-    <state x="2772" y="26" key="FileChooserDialogImpl" timestamp="1585627064022">
+    <state x="2772" y="26" key="FileChooserDialogImpl" timestamp="1588380950173">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
+    <state x="2772" y="26" key="FileChooserDialogImpl/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1588380950173" />
     <state x="2772" y="26" key="FileChooserDialogImpl/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585627064022" />
     <state width="821" height="432" key="GridCell.Tab.0.bottom" timestamp="1584565254868">
       <screen x="2560" y="-463" width="864" height="1496" />
