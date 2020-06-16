@@ -13,7 +13,7 @@ class VideoInfoControls
     public function create(){
         $likeButton = $this->createLikeButton();
         $dislikeButton = $this->createDislikeButton();
-        return "<div>
+        return "<div class = 'controls'>
                 $likeButton
                 $dislikeButton
                 </div>";
@@ -26,7 +26,12 @@ class VideoInfoControls
         $class = 'like-button';
 //        $imgSrc = 'assets/imgs/thumb-up.png';
         $icon = 'great';
-        return ButtonProvider::createButton($text,'',$action,$class,$icon);
+        $color = "white";
+        if($this->video->wasLikedBy()){
+            $color = 'black';
+        }
+
+        return ButtonProvider::createButton($text,'',$action,$class,$icon,$color);
     }
     private function createDislikeButton(){
         $text = $this->video->getDislikes();
@@ -35,7 +40,11 @@ class VideoInfoControls
         $class = 'dislike-button';
 //        $imgSrc = 'assets/imgs/thumb-up.png';
         $icon = 'bad';
-        return ButtonProvider::createButton($text,'',$action,$class,$icon);
+        $color = "white";
+        if($this->video->wasDisLikedBy()){
+            $color = 'black';
+        }
+        return ButtonProvider::createButton($text,'',$action,$class,$icon,$color);
     }
 
 }

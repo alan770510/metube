@@ -6,7 +6,7 @@ require_once('./includes/class/Video.php');
 $usernameLoggedIn = isset($_SESSION['userLoggedIn']) ? $_SESSION['userLoggedIn'] : "";
 $userLoggedInObj = new User($con,$usernameLoggedIn);
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -31,7 +31,7 @@ $userLoggedInObj = new User($con,$usernameLoggedIn);
     <!-- bootstrap.com JS -->
 
 
-    <!--<-- W3CSchool bootstrap nav tabs CSS   These two are conflict-->
+    <!-- W3CSchool bootstrap nav tabs CSS   These two are conflict-->
     <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
     <!--    bootstrap.com JS -->
     <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->

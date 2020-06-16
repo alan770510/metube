@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2951e1b-e328-4f56-877a-143b89598f72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ajax/likeVideo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/videoPlayerActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajax/dislikeVideo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/likeVideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/likeVideo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/common-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/common-action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/videoPlayerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/videoPlayerActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class/ButtonProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class/ButtonProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/class/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class/Video.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/class/VideoInfoControls.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class/VideoInfoControls.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class/VideoinfoSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class/VideoinfoSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watch.php" beforeDir="false" afterPath="$PROJECT_DIR$/watch.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +133,12 @@
       <workItem from="1588357715248" duration="8839000" />
       <workItem from="1588380161516" duration="2852000" />
       <workItem from="1588391859507" duration="1129000" />
-      <workItem from="1588699174038" duration="659000" />
+      <workItem from="1588699174038" duration="816000" />
+      <workItem from="1590254530031" duration="16000" />
+      <workItem from="1591990682932" duration="7148000" />
+      <workItem from="1592088159355" duration="1272000" />
+      <workItem from="1592252357128" duration="2519000" />
+      <workItem from="1592342660959" duration="3891000" />
     </task>
     <task id="LOCAL-00001" summary="After merge">
       <created>1585622886045</created>
@@ -172,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588357847128</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update file size in video table&#10;fix signup bug">
+      <created>1588699981579</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588699981579</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,16 +233,17 @@
     <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.21.1536.824/0.0.2048.1112/2560.-463.864.1496/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585269864339" />
     <state x="2732" y="-334" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584558928730" />
     <state x="2732" y="129" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.0.864.1496/0.0.2048.1112/-1920.348.1536.824@2560.0.864.1496" timestamp="1585163963118" />
-    <state x="109" y="254" key="CommitChangelistDialog2" timestamp="1588357846163">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="2606" y="342" key="CommitChangelistDialog2" timestamp="1588699980725">
+      <screen x="2560" y="0" width="864" height="1496" />
     </state>
     <state x="109" y="254" key="CommitChangelistDialog2/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1588357846163" />
     <state x="2606" y="-121" key="CommitChangelistDialog2/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1586370436861" />
     <state x="2606" y="-121" key="CommitChangelistDialog2/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585622884659" />
-    <state x="2772" y="26" key="FileChooserDialogImpl" timestamp="1588380950173">
+    <state x="2606" y="342" key="CommitChangelistDialog2/-1920.348.1536.824/0.0.2048.1112/2560.0.864.1496@2560.0.864.1496" timestamp="1588699980725" />
+    <state x="2772" y="26" key="FileChooserDialogImpl" timestamp="1590254543373">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
-    <state x="2772" y="26" key="FileChooserDialogImpl/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1588380950173" />
+    <state x="2772" y="26" key="FileChooserDialogImpl/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1590254543373" />
     <state x="2772" y="26" key="FileChooserDialogImpl/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585627064022" />
     <state width="821" height="432" key="GridCell.Tab.0.bottom" timestamp="1584565254868">
       <screen x="2560" y="-463" width="864" height="1496" />
@@ -249,21 +267,22 @@
     <state x="2792" y="98" key="NewPhpClassDialog/-1920.21.1536.824/0.0.2048.1112/2560.-463.864.1496/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585269851302" />
     <state x="2792" y="98" key="NewPhpClassDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584824905747" />
     <state x="2792" y="561" key="NewPhpClassDialog/2560.0.864.1496/0.0.2048.1112/-1920.348.1536.824@2560.0.864.1496" timestamp="1585163740194" />
-    <state x="2826" y="208" key="NewPhpFileDialog" timestamp="1585346725046">
+    <state x="2826" y="208" key="NewPhpFileDialog" timestamp="1592088385045">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
     <state x="2826" y="208" key="NewPhpFileDialog/-1920.21.1536.824/0.0.2048.1112/2560.-463.864.1496/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585346725046" />
-    <state x="2826" y="208" key="NewPhpFileDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584823137327" />
+    <state x="2826" y="208" key="NewPhpFileDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1592088385045" />
     <state x="664" y="341" key="RollbackChangesDialog" timestamp="1588356908798">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="664" y="341" key="RollbackChangesDialog/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1588356908798" />
     <state x="2840" y="-4" key="RollbackChangesDialog/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585596244336" />
-    <state x="2585" y="18" key="Vcs.Push.Dialog.v2" timestamp="1586370440115">
-      <screen x="2560" y="-463" width="864" height="1496" />
+    <state x="2585" y="481" key="Vcs.Push.Dialog.v2" timestamp="1588699983531">
+      <screen x="2560" y="0" width="864" height="1496" />
     </state>
     <state x="2585" y="18" key="Vcs.Push.Dialog.v2/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1586370440115" />
     <state x="2585" y="18" key="Vcs.Push.Dialog.v2/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585622890849" />
+    <state x="2585" y="481" key="Vcs.Push.Dialog.v2/-1920.348.1536.824/0.0.2048.1112/2560.0.864.1496@2560.0.864.1496" timestamp="1588699983531" />
     <state x="719" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1583974638995">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -283,10 +302,10 @@
     <state x="681" y="259" key="run.anything.popup/-1920.21.1536.824/2560.-463.1080.1880/-3840.-7.1280.680/0.0.2048.1112@0.0.2048.1112" timestamp="1583974781607" />
     <state x="2847" y="-115" key="run.anything.popup/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1584383781501" />
     <state x="2847" y="-115" key="run.anything.popup/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585594229258" />
-    <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup" timestamp="1585530896770">
+    <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup" timestamp="1591996144094">
       <screen x="2560" y="-463" width="864" height="1496" />
     </state>
-    <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1585530896770" />
+    <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup/-1920.21.1536.824/2560.-463.864.1496/-3840.-7.1280.680/0.0.2048.1112@2560.-463.864.1496" timestamp="1591996144094" />
     <state x="2655" y="-124" width="672" height="678" key="search.everywhere.popup/-1920.21.1536.824/2560.-463.864.1496/0.0.2048.1112/-3840.-7.1280.680@2560.-463.864.1496" timestamp="1585453596063" />
   </component>
 </project>

@@ -12,3 +12,7 @@ $(document).ready(function () {
         main.toggleClass("paddingleft");
     })
 });
+
+function notSignedIn(){
+    alert("You are not sign in yet");
+}

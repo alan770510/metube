@@ -247,6 +247,25 @@ a.logo-container img {
     font-size:16px;
     color:rgba(17,17,17,0.6)
 }
+.video-info .bottom-section .controls{
+    flex:1;
+    text-align: right;
+}
+
+.video-info .bottom-section .controls button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: rgba(17,17,17,0.4);
+    font-weight: 500;
+    font-size: 13px;
+    cursor:pointer;
+}
+.video-info .bottom-section .controls button img {
+    height:20px;
+    width:20px;
+    margin: 4px 8px 8px 8px;
+}
 .suggestions{
     max-width:425px;
     height:100%;
